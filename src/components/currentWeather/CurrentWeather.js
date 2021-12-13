@@ -172,7 +172,7 @@ class CurrentWeather extends React.Component
             city:cityName,
             error:false
         }))
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=pl&APPID=${API_key}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=pl&APPID=${API_key}`)
         .then(response => 
         {
             if(response.ok)
@@ -247,7 +247,7 @@ class CurrentWeather extends React.Component
                 forecastHourlyElements:[]
             })
           
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&lang=pl&APPID=${API_key}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&lang=pl&APPID=${API_key}`)
         .then(response => 
         {
             if(response.ok)
@@ -315,7 +315,7 @@ class CurrentWeather extends React.Component
 
     getAirQuality(lat,lon)
     {
-        fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_key}`)
+        fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_key}`)
         .then(response => 
         {
             if(response.ok)
