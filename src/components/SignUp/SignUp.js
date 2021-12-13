@@ -114,16 +114,8 @@ function SignUp()
     }
     useEffect(()=>
     {
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login',{
-            mode: 'cors',
-            credentials: 'include',
-            headers : {
-                "Content-Type" : "application/json",
-                "Access-Control-Allow-Headers" : "Content-Type",
-                "Access-Control-Allow-Origin": "https://kind-almeida-03b0a9.netlify.app",
-            },
-
-          }).then((response)=>
+        console.log("dupa");
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
         {
             if(response.data.loggedIn===true)
             {
@@ -131,7 +123,7 @@ function SignUp()
                 console.log(response);
             }else
             {
-                setLoginStatus("unlogged");
+                setLoginStatus("unlogge");
             }
         })
     },[])
