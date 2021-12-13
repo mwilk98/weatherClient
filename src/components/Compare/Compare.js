@@ -218,7 +218,7 @@ class Compare extends React.Component
                 currentProperty:this.state.compareCurrentElements[0]
             }); 
 
-            return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&lang=pl&APPID=${API_key_OWM}`);
+            return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&lang=pl&APPID=${API_key_OWM}`);
         })
         .then(responseAirQuality => responseAirQuality.json()) 
         .catch(err =>{
