@@ -57,6 +57,7 @@ function SignUp()
         }).then((response) =>
         {
             console.log(response.data.err);
+            console.log(response.data.message);
             if(response.data.message)
             {
                 alert(response.data.message)
