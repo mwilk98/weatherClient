@@ -45,13 +45,11 @@ function SignUp()
     //         }
     //     })
     // }
-    const onSubmit = (values) =>  
-    {
-        console.log(values)
+    const onSubmit = (values) => {
         Axios.post('https://weather-mysql-deploy.herokuapp.com/api/login',
         {
-            username:username,
-            password:password
+            username:values.user,
+            password:values.password
         }).then((response) =>
         {
             console.log(response.data.err);
@@ -147,20 +145,15 @@ function SignUp()
                                                             'transform':`translateX(${x}px)`
                                                         }
                     }>
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        
                         <input type="text" className="input-field" placeholder="Nazwa Użytkownika" 
-                        {...register("user", {
-                            required: "Required",
-                        })}/>
+                        onChange={(e)=>{setUsername(e.target.value)}}/>
 
                         <input type="password"  className="input-field" placeholder="Hasło" 
-                        {...register("password", {
-                            required: "Required",
-                        })}/> 
+                        onChange={(e)=>{setPassword(e.target.value)}}/>
 
-                        <input type="submit" className="submit-btn2" value="Zaloguj"/> 
-                        {errors.message && errors.message.message}
-                        </form>
+                        <button className="submit-btn" onClick={login}>Zaloguj </button>
+                        
                         <Link to='/my-weather'><button type="submit" className="submit-btn"> Powrót </button></Link>
 
                     </div>
