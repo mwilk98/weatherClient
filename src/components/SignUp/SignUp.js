@@ -25,31 +25,33 @@ function SignUp()
     Axios.defaults.withCredentials = true;
 
     const { register, handleSubmit, formState: { errors }} = useForm();
-    // const onSubmit = (values) => {
-    //     console.log(values)
-    //     Axios.post('https://weather-mysql-deploy.herokuapp.com/api/register',
-    //     {
-    //         username:values.user,
-    //         password:values.password
-    //     }).then((response) =>
-    //     {
-    //         console.log(response);
-    //         if(!response.data.err){
-                
-    //             alert(`Dodano użytkownika ${values.user}`)
-    //             //window.location.reload(false);
-    //             loginBtn()
-    //         }else{
-
-    //             alert(`Nie dodano użytkownika ${values.user} ponieważ taki już istnieje!`)
-    //         }
-    //     })
-    // }
     const onSubmit = (values) => {
-        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/login',
+        console.log(values)
+        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/register',
         {
             username:values.user,
             password:values.password
+        }).then((response) =>
+        {
+            console.log(response);
+            if(!response.data.err){
+                
+                alert(`Dodano użytkownika ${values.user}`)
+                //window.location.reload(false);
+                loginBtn()
+            }else{
+
+                alert(`Nie dodano użytkownika ${values.user} ponieważ taki już istnieje!`)
+            }
+        })
+    }
+
+    const login = () => 
+    {
+        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/login',
+        {
+            username:username,
+            password:password
         }).then((response) =>
         {
             console.log(response.data.err);
@@ -152,7 +154,7 @@ function SignUp()
                         <input type="password"  className="input-field" placeholder="Hasło" 
                         onChange={(e)=>{setPassword(e.target.value)}}/>
 
-                    
+                        <button className="submit-btn" onClick={login}>Zaloguj </button>
                         
                         <Link to='/my-weather'><button type="submit" className="submit-btn"> Powrót </button></Link>
 
