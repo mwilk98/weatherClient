@@ -52,7 +52,7 @@ const WeatherItem = ({element, selectD: selectD }) =>
                             <img src={weatherIcons[5]} width="20" height="20" alt="img"/>min:{tempMin}&deg;      
                         </p>  
                     </div>
-                    <div className="conditionsOther" >
+                    <div className="conditionsSun" >
                         <p>
                             <img src={weatherIcons[1]} width="20" height="20" alt="img"/>{clouds}% 
                             <img src={weatherIcons[4]} width="20" height="20" alt="img"/>{humidity}%
