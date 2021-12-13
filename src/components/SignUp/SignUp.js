@@ -158,7 +158,7 @@ function SignUp()
                             required: "Required",
                         })}/> 
 
-                        <input type="submit" className="submit-btn2" value="Zarejestruj"/> 
+                        <input type="submit" className="submit-btn2" value="Zaloguj"/> 
                         {errors.message && errors.message.message}
                         </form>
                         <Link to='/my-weather'><button type="submit" className="submit-btn"> Powrót </button></Link>
