@@ -48,6 +48,8 @@ function SignUp()
 
     const login = () => 
     {
+        console.log(username);
+        console.log(password);
         Axios.post('https://weather-mysql-deploy.herokuapp.com/api/login',
         {
             username:username,
