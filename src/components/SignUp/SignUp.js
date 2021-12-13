@@ -27,7 +27,7 @@ function SignUp()
     const { register, handleSubmit, formState: { errors }} = useForm();
     const onSubmit = (values) => {
         console.log(values)
-        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/register',{headers: {'Access-Control-Allow-Origin': '*'}},
+        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/register',{headers: {'Access-Control-Allow-Origin': 'https://kind-almeida-03b0a9.netlify.app'}},
         {
             username:values.user,
             password:values.password
@@ -50,7 +50,7 @@ function SignUp()
     {
         console.log(username);
         console.log(password);
-        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/login',{headers: {'Access-Control-Allow-Origin': '*'}},
+        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/login',{headers: {'Access-Control-Allow-Origin': 'https://kind-almeida-03b0a9.netlify.app'}},
         {
             username:username,
             password:password
@@ -86,7 +86,7 @@ function SignUp()
     }
     const logout = () =>
     {
-        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/logout',{headers: {'Access-Control-Allow-Origin': '*'}})
+        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/logout',{headers: {'Access-Control-Allow-Origin': 'https://kind-almeida-03b0a9.netlify.app'}})
             .then((response) =>
             {
             console.log(response);
@@ -98,7 +98,7 @@ function SignUp()
                 setLoginStatus("unlogged");
             }
         })
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/logout',{headers: {'Access-Control-Allow-Origin': '*'}}).then((response)=>
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/logout',{headers: {'Access-Control-Allow-Origin': 'https://kind-almeida-03b0a9.netlify.app'}}).then((response)=>
         {
             if(response.data.loggedIn===false)
             {
@@ -114,7 +114,7 @@ function SignUp()
     }
     useEffect(()=>
     {
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login',{headers: {'Access-Control-Allow-Origin': '*'}}).then((response)=>
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login',{headers: {'Access-Control-Allow-Origin': 'https://kind-almeida-03b0a9.netlify.app'}}).then((response)=>
         {
             console.log(loginStatus);
             if(response.data.loggedIn===true)
