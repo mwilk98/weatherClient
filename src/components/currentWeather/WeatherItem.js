@@ -71,7 +71,7 @@ const WeatherItem = ({element, selectD: selectD }) =>
                                                         background: conditionColors[color]
                                                     }
                     }>
-                        <p>Jakość powietrza:</p>
+                        <p>Dupa</p>
                         <p>  {aqi}</p>
                         <p>({Math.floor((pm2_5/35)*100)}%)</p>
                         <p>
