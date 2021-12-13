@@ -92,11 +92,9 @@ function SignUp()
             console.log(response);
             if(response.data.message)
             {
-                console.log(response);
                 setLoginStatus("logged");
             }else
             {
-                console.log(response);
                 setLoginStatus("unlogged");
             }
         })
@@ -116,9 +114,7 @@ function SignUp()
     }
     useEffect(()=>
     {
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login',{
-            mode: 'no-cors'
-          }).then((response)=>
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
         {
             if(response.data.loggedIn===true)
             {
@@ -126,7 +122,6 @@ function SignUp()
                 console.log(response);
             }else
             {
-                console.log(response);
                 setLoginStatus("unlogged");
             }
         })
