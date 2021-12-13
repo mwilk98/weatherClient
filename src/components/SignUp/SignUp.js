@@ -112,20 +112,20 @@ function SignUp()
         })
         window.location.reload(false);
     }
-    useEffect(()=>
-    {
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
-        {
-            if(response.data.loggedIn===true)
-            {
-                setLoginStatus(response.data.user[0].username);
-                console.log(response);
-            }else
-            {
-                setLoginStatus("unlogged");
-            }
-        })
-    },[])
+    // useEffect(()=>
+    // {
+    //     Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
+    //     {
+    //         if(response.data.loggedIn===true)
+    //         {
+    //             setLoginStatus(response.data.user[0].username);
+    //             console.log(response);
+    //         }else
+    //         {
+    //             setLoginStatus("unlogged");
+    //         }
+    //     })
+    // },[])
     if(loginStatus==="unlogged")
     {
         return(
