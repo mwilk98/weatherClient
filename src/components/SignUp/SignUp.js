@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import './SignUp.css';
 import { useForm } from 'react-hook-form';
- res.setHeader('Access-Control-Allow-Origin', 'https://kind-almeida-03b0a9.netlify.app');
+
 function SignUp()
 {
 
