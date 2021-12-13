@@ -114,8 +114,11 @@ function SignUp()
     }
     useEffect(()=>
     {
-        console.log(loginStatus);
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
+        console.log(response);
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login',{
+            mode: 'cors',
+            credentials: 'include'
+          }).then((response)=>
         {
             if(response.data.loggedIn===true)
             {
