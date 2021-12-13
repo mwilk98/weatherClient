@@ -92,9 +92,11 @@ function SignUp()
             console.log(response);
             if(response.data.message)
             {
+                console.log(response);
                 setLoginStatus("logged");
             }else
             {
+                console.log(response);
                 setLoginStatus("unlogged");
             }
         })
@@ -123,6 +125,7 @@ function SignUp()
                 console.log(response);
             }else
             {
+                console.log(response);
                 setLoginStatus("unlogged");
             }
         })
