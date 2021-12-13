@@ -107,7 +107,7 @@ class Compare extends React.Component
             compareCurrentElements:[]
         });
         
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&APPID=${API_key_OWM}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&APPID=${API_key_OWM}`)
         .then(response => {
             if(response.ok){
                 return response
@@ -147,7 +147,7 @@ class Compare extends React.Component
                 currentProperty:this.state.compareCurrentElements[0]
             }); 
 
-            return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&APPID=${API_key_OWM}`);
+            return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pl&APPID=${API_key_OWM}`);
         })
         .then(responseAirQuality => responseAirQuality.json()) 
         .catch(err =>{
@@ -171,7 +171,7 @@ class Compare extends React.Component
             compareCurrentElements:[]
         });
         
-        const result = fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&lang=pl&APPID=${API_key_OWM}`)
+        const result = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&lang=pl&APPID=${API_key_OWM}`)
         .then(response => {
             if(response.ok)
             {
@@ -283,7 +283,7 @@ class Compare extends React.Component
     getWeatherWeatherApi = (city) =>
     {
             
-        fetch(`http://api.weatherapi.com/v1/current.json?key=${API_key_WA}&q=${city}&days=7&aqi=yes&alerts=yes&lang=pl`)
+        fetch(`https://api.weatherapi.com/v1/current.json?key=${API_key_WA}&q=${city}&days=7&aqi=yes&alerts=yes&lang=pl`)
         .then(response => 
         {
             if(response.ok)
@@ -331,7 +331,7 @@ class Compare extends React.Component
             ForecastDailyElements:[]
         });
             
-        fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_key_WA}&q=${city}&days=4&aqi=yes&alerts=yes&lang=pl`)
+        fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_key_WA}&q=${city}&days=4&aqi=yes&alerts=yes&lang=pl`)
         .then(response => 
         {
             if(response.ok)

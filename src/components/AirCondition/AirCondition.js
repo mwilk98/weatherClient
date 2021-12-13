@@ -34,7 +34,7 @@ class AirCondition extends React.Component
     {
         e.preventDefault()
           
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&APPID=${API_key}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&APPID=${API_key}`)
         .then(response => 
         {
             if(response.ok)
@@ -74,7 +74,7 @@ class AirCondition extends React.Component
     getAirQuality(lat,lon)
     {
         var result = null;
-        result = fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_key}`)
+        result = fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_key}`)
         .then(responseAirQuality => 
         {
             if(responseAirQuality.ok)
@@ -101,7 +101,7 @@ class AirCondition extends React.Component
                 color:responseAirQuality.list[0].main.aqi,
                 error:false
             }))
-              return fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_key}`);
+              return fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_key}`);
         })
         .then(responseAirQuality => responseAirQuality.json())         
         .catch(err =>
