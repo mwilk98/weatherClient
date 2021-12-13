@@ -120,7 +120,7 @@ function SignUp()
             headers : {
                 "Content-Type" : "application/json",
                 "Access-Control-Allow-Headers" : "Content-Type",
-                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Origin": "https://kind-almeida-03b0a9.netlify.app",
             },
 
           }).then((response)=>
