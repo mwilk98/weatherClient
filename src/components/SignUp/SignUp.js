@@ -116,7 +116,6 @@ function SignUp()
     }
     useEffect(()=>
     {
-        console.log("dupa");
         Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
         {
             if(response.data.loggedIn===true)
