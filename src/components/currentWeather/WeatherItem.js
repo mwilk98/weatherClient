@@ -66,13 +66,7 @@ const WeatherItem = ({element, selectD: selectD }) =>
                             <img src={weatherIcons[3]} width="20" height="20" alt="img"/>{sunset}
                         </p>
                     </div>
-                    <p>Dupa</p>
-                    <p>{conditionColors[color]}</p>
-                    <div className="conditionsAqi"  style={
-                                                    { 
-                                                        background: conditionColors[color]
-                                                    }
-                    }>
+                    <div className="conditionsAqi"  >
                         <p>Jakość powietrza:</p>
                         <p>  {aqi}</p>
                         <p>({Math.floor((pm2_5/35)*100)}%)</p>
