@@ -123,7 +123,7 @@ function SignUp()
                 console.log(response);
             }else
             {
-                setLoginStatus("unlogge");
+                setLoginStatus("unlogged");
             }
         })
     },[])
