@@ -114,10 +114,7 @@ function SignUp()
     }
     useEffect(()=>
     {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = 'https://api.liveconnect.in/backend/web/erpsync/get-all-orders?data=dbCode=UAT04M%7Cidx=100%7CuserId=6214%7Cres_format=1';
-        
-        Axios.get(proxyurl + url).then((response)=>
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
         {
             if(response.data.loggedIn===true)
             {
