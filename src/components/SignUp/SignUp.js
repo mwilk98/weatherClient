@@ -27,26 +27,6 @@ function SignUp()
     const { register, handleSubmit, formState: { errors }} = useForm();
     const onSubmit = (values) => {
         console.log(values)
-        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/register',
-        {
-            username:values.user,
-            password:values.password
-        }).then((response) =>
-        {
-            console.log(response);
-            if(!response.data.err){
-                
-                alert(`Dodano użytkownika ${values.user}`)
-                //window.location.reload(false);
-                loginBtn()
-            }else{
-
-                alert(`Nie dodano użytkownika ${values.user} ponieważ taki już istnieje!`)
-            }
-        })
-    }
-    const onSubmit2 = (values) => {
-        console.log(values)
         Axios.post('https://weather-mysql-deploy.herokuapp.com/api/login',
         {
             username:username,
@@ -67,6 +47,9 @@ function SignUp()
                 alert("Błąd servera - offline")
             }
         })
+    }
+    const onSubmit2 = (values) => {
+
     }
 
     const registerBtn = () =>
@@ -148,7 +131,7 @@ function SignUp()
                                                         }
                     }>
                         
-                        <form onSubmit={handleSubmit(onSubmit2)}>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                         <input type="text"  className="input-field" placeholder="Nazwa Użytkownika"
                         {...register("user", {
                             required: "Required",
