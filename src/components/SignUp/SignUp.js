@@ -152,7 +152,7 @@ function SignUp()
                         <input type="password"  className="input-field" placeholder="Hasło" 
                         onChange={(e)=>{setPassword(e.target.value)}}/>
 
-                        <button className="submit-btn" onClick={login}>Zaloguj </button>
+                    
                         
                         <Link to='/my-weather'><button type="submit" className="submit-btn"> Powrót </button></Link>
 
