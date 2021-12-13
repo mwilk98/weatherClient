@@ -52,7 +52,7 @@ const WeatherItem = ({element, selectD: selectD }) =>
                             <img src={weatherIcons[5]} width="20" height="20" alt="img"/>min:{tempMin}&deg;      
                         </p>  
                     </div>
-                    <div className="conditionsSun" >
+                    <div className="conditionsOther" >
                         <p>
                             <img src={weatherIcons[1]} width="20" height="20" alt="img"/>{clouds}% 
                             <img src={weatherIcons[4]} width="20" height="20" alt="img"/>{humidity}%
@@ -60,20 +60,10 @@ const WeatherItem = ({element, selectD: selectD }) =>
                             <p><img src={weatherIcons[7]} width="20" height="20" alt="img"/>{wind}km/h</p>
                             </p>
                     </div>
-                    <div className="conditionsSun" >
+                    <div className="conditionsAqi" >
                         <p>
                             <img src={weatherIcons[2]} width="20" height="20" alt="img"/>{sunrise} 
                             <img src={weatherIcons[3]} width="20" height="20" alt="img"/>{sunset}
-                        </p>
-                        <p>Jakość powietrza:</p>
-                        <p>  {aqi}</p>
-                        <p>({Math.floor((pm2_5/35)*100)}%)</p>
-                        <p>
-                            <Link to='/air-condition' >
-                                <button type="button">
-                                   Szczegóły
-                                </button>
-                            </Link>
                         </p>
                     </div>
                     <div className="conditionsAqi"  style={
