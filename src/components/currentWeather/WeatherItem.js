@@ -66,7 +66,7 @@ const WeatherItem = ({element, selectD: selectD }) =>
                             <img src={weatherIcons[3]} width="20" height="20" alt="img"/>{sunset}
                         </p>
                     </div>
-                    <div className="conditionsAqi"  style={
+                    <div className="conditionsSun"  style={
                                                     { 
                                                         background: conditionColors[color]
                                                     }
