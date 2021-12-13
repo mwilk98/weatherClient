@@ -116,6 +116,7 @@ function SignUp()
     {
         Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
         {
+            console.log(loginStatus);
             if(response.data.loggedIn===true)
             {
                 setLoginStatus(response.data.user[0].username);
