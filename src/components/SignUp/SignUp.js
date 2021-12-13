@@ -117,7 +117,11 @@ function SignUp()
         Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login',{
             mode: 'cors',
             credentials: 'include',
-            headers: { 'Content-Type': 'application/json'}
+            headers : {
+                "Content-Type" : "application/json",
+                "Access-Control-Allow-Headers" : "Content-Type",
+                "Access-Control-Allow-Origin": "*",
+            },
 
           }).then((response)=>
         {
