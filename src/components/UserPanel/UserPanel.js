@@ -52,7 +52,7 @@ function UserPanel()
    
     useEffect(()=>
     {
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login',{headers: {'Access-Control-Allow-Origin': '*'}}).then((response)=>
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/login').then((response)=>
         {
             if(response.data.loggedIn===true)
             {
@@ -65,7 +65,7 @@ function UserPanel()
             }
         });
 
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/get',{headers: {'Access-Control-Allow-Origin': '*'}})
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/get')
         .then((response)=>
         {
             
@@ -90,7 +90,7 @@ function UserPanel()
         Axios.post('https://weather-mysql-deploy.herokuapp.com/api/delete',
         {
             id:id
-        },{headers: {'Access-Control-Allow-Origin': '*'}});
+        });
         
         window.location.reload(false);
         
@@ -98,7 +98,7 @@ function UserPanel()
     }
     const logout = () =>
     {
-        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/logout',{headers: {'Access-Control-Allow-Origin': '*'}})
+        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/logout')
             .then((response) =>
             {
             console.log(response);
@@ -110,7 +110,7 @@ function UserPanel()
                 setLoginStatus("unlogged");
             }
         })
-        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/logout',{headers: {'Access-Control-Allow-Origin': '*'}}).then((response)=>
+        Axios.get('https://weather-mysql-deploy.herokuapp.com/api/logout').then((response)=>
         {
             if(response.data.loggedIn===false)
             {
