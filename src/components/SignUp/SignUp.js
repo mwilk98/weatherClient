@@ -22,7 +22,7 @@ function SignUp()
 
     const history = useHistory();
 
-    Axios.defaults.withCredentials = true;
+    //Axios.defaults.withCredentials = true;
 
     const { register, handleSubmit, formState: { errors }} = useForm();
     const onSubmit = (values) => {
