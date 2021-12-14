@@ -102,7 +102,6 @@ function UserPanel()
             id:id
         });
         
-        window.location.reload(false);
         
         console.log("USUNIETO");
     }
@@ -132,7 +131,6 @@ function UserPanel()
                 console.log(response);
             }
         })
-        window.location.reload(false);
     }
     const nextProperty = () => 
     {
