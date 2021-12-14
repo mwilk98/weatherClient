@@ -110,7 +110,6 @@ function SignUp()
                 console.log(response);
             }
         })
-        window.location.reload(false);
     }
     useEffect(()=>
     {
