@@ -230,7 +230,7 @@ function UserPanel()
                         {...register("aqi", {
                             required: "Required",
                         })}/>
-                        <input type="submit" className="submit-btn2" value="Dodaj"/> 
+                        <button type="submit"className="submit-btn2"value="Dodaj"></button>
                         {errors.message && errors.message.message}
                         <button type="submit" className="submit-btn2" onClick={logout}> Wyloguj </button>
                         </form>
