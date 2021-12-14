@@ -11,46 +11,26 @@ function UserPanel()
     const [Lid, setLid] = useState('');
 
     const { register, handleSubmit, formState: { errors }} = useForm();
-  const onSubmit = (values) => {
-    console.log(values)
-    Axios.post('https://weather-mysql-deploy.herokuapp.com/api/insert',
+    const onSubmit = (values) => {
+        console.log(values)
+        Axios.post('https://weather-mysql-deploy.herokuapp.com/api/insert',
         {
-            cityName:values.cityName,
-            date:values.date,
-            time:values.time,
-            weatherState:values.weatherState,
-            temp:values.temp,
-            clouds:values.clouds,
-            humidity:values.humidity,
-            pressure:values.pressure,
-            wind:values.wind,
-            aqi:values.aqi
+            username:values.user,
+            password:values.password
         }).then((response) =>
         {
             console.log(response);
             if(!response.data.err){
                 
-                alert(`Dodano dane`)
+                alert(`Dodano użytkownika ${values.user}`)
                 //window.location.reload(false);
+                loginBtn()
             }else{
 
-                alert(`Nie dodano danych!`)
+                alert(`Nie dodano użytkownika ${values.user} ponieważ taki już istnieje!`)
             }
         })
-        setcityWeatherList([...cityWeatherList,{
-            cityName:values.cityName,
-            date:values.date,
-            time:values.time,
-            weatherState:values.weatherState,
-            temp:values.temp,
-            clouds:values.clouds,
-            humidity:values.humidity,
-            pressure:values.pressure,
-            wind:values.wind,
-            aqi:values.aqi
-        },]);
-        window.location.reload(false);
-  };
+    }
 
 
     const [cityWeatherList, setcityWeatherList] = useState([]);
