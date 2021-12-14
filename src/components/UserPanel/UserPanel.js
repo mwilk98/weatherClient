@@ -15,8 +15,16 @@ function UserPanel()
         console.log(values)
         Axios.post('https://weather-mysql-deploy.herokuapp.com/api/insert',
         {
-            username:values.user,
-            password:values.password
+            cityName:values.cityName,
+            date:values.date,
+            time:values.time,
+            weatherState:values.weatherState,
+            temp:values.temp,
+            clouds:values.clouds,
+            humidity:values.humidity,
+            pressure:values.pressure,
+            wind:values.wind,
+            aqi:values.aqi
         }).then((response) =>
         {
             console.log(response);
@@ -24,13 +32,26 @@ function UserPanel()
                 
                 alert(`Dodano użytkownika ${values.user}`)
                 //window.location.reload(false);
+                loginBtn()
             }else{
 
                 alert(`Nie dodano użytkownika ${values.user} ponieważ taki już istnieje!`)
             }
         })
+        setcityWeatherList([...cityWeatherList,{
+            cityName:values.cityName,
+            date:values.date,
+            time:values.time,
+            weatherState:values.weatherState,
+            temp:values.temp,
+            clouds:values.clouds,
+            humidity:values.humidity,
+            pressure:values.pressure,
+            wind:values.wind,
+            aqi:values.aqi
+        },]);
+        window.location.reload(false);
     }
-
 
     const [cityWeatherList, setcityWeatherList] = useState([]);
     const [property, setProperty] = useState([]);
