@@ -37,7 +37,18 @@ function UserPanel()
                 alert(`Nie dodano danych`)
             }
         })
-        window.location.reload(false);
+        setcityWeatherList([...cityWeatherList,{
+            cityName:values.cityName,
+            date:values.date,
+            time:values.time,
+            weatherState:values.weatherState,
+            temp:values.temp,
+            clouds:values.clouds,
+            humidity:values.humidity,
+            pressure:values.pressure,
+            wind:values.wind,
+            aqi:values.aqi
+        },]);
     }
 
     const [cityWeatherList, setcityWeatherList] = useState([]);
