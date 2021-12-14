@@ -232,8 +232,8 @@ function UserPanel()
                         })}/>
                         <input type="submit" className="submit-btn2" value="Dodaj"/> 
                         {errors.message && errors.message.message}
-                        <button type="submit" className="submit-btn2" onClick={logout}> Wyloguj </button>
                         </form>
+                        <button type="submit" className="submit-btn2" onClick={logout}> Wyloguj </button>
                     </div>
                 </div>   
                 <div className="user-main">
