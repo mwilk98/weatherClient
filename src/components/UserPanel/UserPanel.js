@@ -24,7 +24,6 @@ function UserPanel()
                 
                 alert(`Dodano użytkownika ${values.user}`)
                 //window.location.reload(false);
-                loginBtn()
             }else{
 
                 alert(`Nie dodano użytkownika ${values.user} ponieważ taki już istnieje!`)
