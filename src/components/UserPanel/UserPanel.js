@@ -31,7 +31,7 @@ function UserPanel()
             if(!response.data.err){
                 
                 alert(`Dodano dane`)
-                //window.location.reload(false);
+                window.location.reload(false);
             }else{
 
                 alert(`Nie dodano danych`)
