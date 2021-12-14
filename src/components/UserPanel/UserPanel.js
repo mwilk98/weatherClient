@@ -154,7 +154,7 @@ function UserPanel()
 
 
                         Miejsce
-                        <input type="text" name = "message" maxLength="20" className="input-field2" placeholder="Miejsce" required 
+                        <input type="text" maxLength="20" className="input-field2" placeholder="Miejsce" required 
                         {...register("cityName", {
                             required: "Required",
                         })}
