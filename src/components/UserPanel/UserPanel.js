@@ -30,12 +30,11 @@ function UserPanel()
             console.log(response);
             if(!response.data.err){
                 
-                alert(`Dodano użytkownika ${values.user}`)
+                alert(`Dodano dane`)
                 //window.location.reload(false);
-                loginBtn()
             }else{
 
-                alert(`Nie dodano użytkownika ${values.user} ponieważ taki już istnieje!`)
+                alert(`Nie dodano danych`)
             }
         })
         setcityWeatherList([...cityWeatherList,{
