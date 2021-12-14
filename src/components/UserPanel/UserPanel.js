@@ -165,16 +165,72 @@ function UserPanel()
                 <div className="form-box2">
                     <div className="login-input-group2">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input type="text" minlength="4" className="input-field" placeholder="Nazwa Użytkownika"
-                        {...register("user", {
-                            required: "Required",
-                        })}/>   
-                        <input type="password" minlength="8" className="input-field" placeholder="Hasło"
-                        {...register("password", {
-                            required: "Required",
-                        })}/> 
 
-                        <input type="submit" className="submit-btn2" value="Zarejestruj"/> 
+
+                        Miejsce
+                        <input type="text" name = "message" maxLength="20" className="input-field2" placeholder="Miejsce" required 
+                        {...register("cityName", {
+                            required: "Required",
+                        })}
+                        />
+                        Data
+                        <input type="date" className="input-field2" placeholder="Data" required 
+                        {...register("date", {
+                            required: "Required",
+                        })}/>
+                        Godzina
+                        <input type="time" className="input-field2" placeholder="Godzina" required 
+                        {...register("time", {
+                            required: "Required",
+                        })}/>
+                        Pogoda
+                        <td></td>
+                        <select {...register("weatherState", {
+                            required: "Required",
+                        })}>
+                                <option value="Czyste Niebo">Czyste Niebo</option>
+                                <option value="Lekkie Zachmurzenie">Lekkie Zachmurzenie</option>
+                                <option value="Zachmurzenie">Zachmurzenie</option>
+                                <option value="Duże Zachmurzenie">Duże Zachmurzenie</option>
+                                <option value="Przejaśnienia">Przejaśnienia</option>
+                                <option value="Lekki deszcz">Lekki deszcz</option>
+                                <option value="Deszcz">Deszcz</option>
+                                <option value="Burza">Burza</option>
+                                <option value="Śnieg">Śnieg</option>
+                                <option value="Mgła">Mgła</option>
+                        </select>
+                        <td></td>
+                        Temperatura
+                        <input type="number" min="-90" max="60" className="input-field2" placeholder="Temperatura (°C)" required 
+                        {...register("temp", {
+                            required: "Required",
+                        })}/>
+                        Zachmurzenie
+                        <input type="number" min="0" max="100" className="input-field2" placeholder="Zachmurzenie (%)" required 
+                        {...register("clouds", {
+                            required: "Required",
+                        })}/>
+                        Wilgotność
+                        <input type="number" min="0" max="100" className="input-field2" placeholder="Wilgotność" required 
+                        {...register("humidity", {
+                            required: "Required",
+                        })}/>
+                        Ciśnienie
+                        <input type="number" min="850" max="1100" className="input-field2" placeholder="Ciśnienie (hPa)" required 
+                        {...register("pressure", {
+                            required: "Required",
+                        })}/>
+                        Wiatr
+                        <input type="number" min="0" max="500" className="input-field2" placeholder="Wiatr (km/h)" required 
+                        {...register("wind", {
+                            required: "Required",
+                        })}/>
+                        Jakość powietrza
+                        <input type="number" min="1" max="5" className="input-field2" placeholder="Jakość powietrza (1-5)" 
+                        {...register("aqi", {
+                            required: "Required",
+                        })}/>
+                        <input type="submit" className="submit-btn2" value="Dodaj"/> 
                         {errors.message && errors.message.message}
                         </form>
                         <button type="submit" className="submit-btn2" onClick={logout}> Wyloguj </button>
