@@ -37,6 +37,7 @@ function UserPanel()
                 alert(`Nie dodano danych`)
             }
         })
+        window.location.reload(false);
     }
 
     const [cityWeatherList, setcityWeatherList] = useState([]);
