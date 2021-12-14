@@ -12,6 +12,7 @@ function UserPanel()
 
     const { register, handleSubmit, formState: { errors }} = useForm();
   const onSubmit = (values) => {
+    console.log(values)
     Axios.post('https://weather-mysql-deploy.herokuapp.com/api/insert',
         {
             cityName:values.cityName,
@@ -24,7 +25,18 @@ function UserPanel()
             pressure:values.pressure,
             wind:values.wind,
             aqi:values.aqi
-        });
+        }).then((response) =>
+        {
+            console.log(response);
+            if(!response.data.err){
+                
+                alert(`Dodano dane`)
+                //window.location.reload(false);
+            }else{
+
+                alert(`Nie dodano danych!`)
+            }
+        })
         setcityWeatherList([...cityWeatherList,{
             cityName:values.cityName,
             date:values.date,
